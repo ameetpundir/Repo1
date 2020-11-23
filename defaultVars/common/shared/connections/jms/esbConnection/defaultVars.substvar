@@ -1,0 +1,29 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<repository xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns = "http://www.tibco.com/xmlns/repo/types/2002">
+	<globalVariables>
+		<globalVariable>
+			<name>JndiConextURL</name>
+			<value>tcp://nb-tibco-ems02-int.tech.rz.db.de:7666</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1605703455341</modTime>
+		</globalVariable>
+		<globalVariable>
+			<name>JndiPassword</name>
+			<value>52d7bd7c6a49b4e2476670f961671fe2</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1605703455357</modTime>
+		</globalVariable>
+		<globalVariable>
+			<name>JndiUser</name>
+			<value>fachbf</value>
+			<deploymentSettable>true</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<modTime>1605703455372</modTime>
+		</globalVariable>
+	</globalVariables>
+</repository>

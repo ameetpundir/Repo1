@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource>
+    <name>ESBJMSConnection</name>
+    <resourceType>ae.shared.JMSConnectionKey</resourceType>
+    <config>
+        <NamingEnvironment>
+            <UseJNDI>true</UseJNDI>
+            <ProviderURL>tcp://twix16-203v.linux.rz.db.de:7222</ProviderURL>
+            <NamingURL>%%common/shared/connections/jms/esbConnection/JndiConextURL%%</NamingURL>
+            <NamingInitialContextFactory>com.tibco.tibjms.naming.TibjmsInitialContextFactory</NamingInitialContextFactory>
+            <TopicFactoryName>TopicConnectionFactory</TopicFactoryName>
+            <QueueFactoryName>QueueConnectionFactory</QueueFactoryName>
+            <NamingPrincipal>%%common/shared/connections/jms/esbConnection/JndiUser%%</NamingPrincipal>
+            <NamingCredential>%%common/shared/connections/jms/esbConnection/JndiPassword%%</NamingCredential>
+        </NamingEnvironment>
+        <ConnectionAttributes>
+            <username>%%common/shared/connections/jms/esbConnection/JndiUser%%</username>
+            <password>%%common/shared/connections/jms/esbConnection/JndiPassword%%</password>
+            <clientID/>
+            <autoGenClientID>true</autoGenClientID>
+        </ConnectionAttributes>
+        <UseXACF>false</UseXACF>
+    </config>
+</BWSharedResource>

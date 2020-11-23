@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pfx="http://xmlns.abstract2.com/1605711277488" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.final.com/1605702600222" xmlns:pfx3="http://xmlns.concrete.com/1605702600222" xmlns:ns="http://xmlns.example.com/1605701777364" xmlns:pfx4="http://xmlns.abstract.com/1605701777364">
+    <wsdl:import namespace="http://xmlns.concrete.com/1605702600222" location="/SharedResources/WSDLs/Concrete/GeneralTesterConcrete.wsdl"/>
+    <wsdl:import namespace="http://xmlns.abstract.com/1605701777364" location="/SharedResources/WSDLs/Abstract/GeneralTesterAbstract.wsdl"/>
+    <pd:name>Services/1/Port1P1O2-notNeeded.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType wsMsgRef="pfx4:IP"/>
+    <pd:startX>150</pd:startX>
+    <pd:startY>65</pd:startY>
+    <pd:returnBindings>
+        <ns:OP/>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="pfx:OP"/>
+    <pd:endX>604</pd:endX>
+    <pd:endY>66</pd:endY>
+    <pd:errorSchemas>
+        <Schema0 wsMsgRef="pfx:Fault"/>
+    </pd:errorSchemas>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1605702600387</pd:targetNamespace>
+    <pd:activity name="SOAPRequestReply">
+        <pd:type>com.tibco.plugin.soap.SOAPSendReceiveActivity</pd:type>
+        <pd:resourceType>ae.activities.SOAPSendReceiveUI</pd:resourceType>
+        <pd:x>368</pd:x>
+        <pd:y>70</pd:y>
+        <config>
+            <timeout>0</timeout>
+            <soapAttachmentStyle>SwA</soapAttachmentStyle>
+            <timeoutType>Seconds</timeoutType>
+            <service>pfx3:GeneralTester-service1</service>
+            <servicePort>Port1Endpoint1</servicePort>
+            <operation>P1O3</operation>
+            <soapAction>P1O3</soapAction>
+            <sharedChannels>
+                <jmsChannel>
+                    <targetService/>
+                    <JMSPriority>4</JMSPriority>
+                    <JMSTimeToLive>0</JMSTimeToLive>
+                    <JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+                    <JMSMessageType>Text</JMSMessageType>
+                    <NamingURL>tibjmsnaming://localhost:7222</NamingURL>
+                    <NamingInitialContextFactory>com.tibco.tibjms.naming.TibjmsInitialContextFactory</NamingInitialContextFactory>
+                    <NamingPrincipal>admin</NamingPrincipal>
+                    <NamingCredential/>
+                    <ConnectionFactory>QueueConnectionFactory</ConnectionFactory>
+                    <JMSTo>queue.sample.gereraltester.1</JMSTo>
+                    <JMSUserName>admin</JMSUserName>
+                    <JMSPassword/>
+                    <shareJms>true</shareJms>
+                </jmsChannel>
+            </sharedChannels>
+            <ConnectionReference>/ESBJMSConnection.sharedjmscon</ConnectionReference>
+            <useSsl>false</useSsl>
+            <ns0:ssl xmlns:ns0="http://www.tibco.com/xmlns/aemeta/services/2002"/>
+        </config>
+        <pd:inputBindings>
+            <inputMessage>
+                <Output>
+                    <xsl:value-of select="'TestOutput1'"/>
+                </Output>
+            </inputMessage>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>SOAPRequestReply</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>SOAPRequestReply</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>

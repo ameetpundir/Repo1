@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/GeneralTesterBW/Schema.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.abstract2.com/1605716571040" targetNamespace="http://xmlns.abstract2.com/1605716571040">
+    <import namespace="http://www.tibco.com/schemas/GeneralTesterBW/Schema.xsd" location="../../Schemas/Error.xsd"/>
+    <message name="Input">
+        <part name="IP" type="xsd:string"/>
+    </message>
+    <message name="Output">
+        <part name="OP" type="xsd:string"/>
+    </message>
+    <message name="Fault">
+        <part name="fault" element="ns:rootError"/>
+    </message>
+    <portType name="Service2Port1">
+        <operation name="S2P1O1">
+            <input message="tns:Input"/>
+            <output message="tns:Output"/>
+            <fault name="fault1" message="tns:Fault"/>
+        </operation>
+    </portType>
+</definitions>

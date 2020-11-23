@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pfx="http://xmlns.concrete3.com/1605777947534" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.concrete.com/1605702354501" xmlns:pfx3="http://xmlns.concrete.com/1605702600222" xmlns:wsdlPfx="http://xmlns.abstract2.com/1605716571040">
+    <wsdl:import namespace="http://xmlns.abstract2.com/1605716571040" location="/SharedResources/WSDLs/Abstract/GeneralTesterAbstract2.wsdl"/>
+    <wsdl:import namespace="http://xmlns.concrete3.com/1605777947534" location="/SharedResources/WSDLs/Concrete/GeneralTesterConcrete3.wsdl"/>
+    <pd:name>Services/2/Service2Port1S2P1O1.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType wsMsgRef="wsdlPfx:Input"/>
+    <pd:startX>150</pd:startX>
+    <pd:startY>65</pd:startY>
+    <pd:returnBindings>
+        <wsdlPfx:Output>
+            <OP>
+                <xsl:value-of select="$Start/wsdlPfx:Input/IP"/>
+            </OP>
+        </wsdlPfx:Output>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType wsMsgRef="wsdlPfx:Output"/>
+    <pd:endX>450</pd:endX>
+    <pd:endY>64</pd:endY>
+    <pd:errorSchemas>
+        <Schema1 wsMsgRef="wsdlPfx:Fault"/>
+    </pd:errorSchemas>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1605716782119</pd:targetNamespace>
+    <pd:activity name="Service2Port1S2P1O1 (1)">
+        <pd:type>com.tibco.pe.core.CallProcessActivity</pd:type>
+        <pd:resourceType>ae.process.subprocess</pd:resourceType>
+        <pd:x>292</pd:x>
+        <pd:y>74</pd:y>
+        <config>
+            <processName>/Services/2/Service2Port1S2P1O1 (1).process</processName>
+            <spawn>true</spawn>
+        </config>
+        <pd:inputBindings>
+            <wsdlPfx:Input>
+                <IP>
+                    <xsl:value-of select="$Start/wsdlPfx:Input/IP"/>
+                </IP>
+            </wsdlPfx:Input>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Service2Port1S2P1O1 (1)</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Service2Port1S2P1O1 (1)</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>
