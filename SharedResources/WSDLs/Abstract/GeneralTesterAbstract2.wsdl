@@ -10,11 +10,9 @@
     <message name="Fault">
         <part name="fault" element="ns:rootError"/>
     </message>
-    <portType name="Service2Port1">
-        <operation name="S2P1O1">
+    <portType name="P2">
+        <operation name="O2">
             <input message="tns:Input"/>
-            <output message="tns:Output"/>
-            <fault name="fault1" message="tns:Fault"/>
         </operation>
     </portType>
 </definitions>

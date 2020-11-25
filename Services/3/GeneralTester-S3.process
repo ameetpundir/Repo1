@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:wsdlPfx="http://xmlns.abstract3.com/1605719165110">
     <wsdl:import namespace="http://xmlns.abstract3.com/1605719165110" location="/SharedResources/WSDLs/Abstract/GeneralTesterAbstract3.wsdl"/>
-    <pd:name>Services/3/S3P3Callback.process</pd:name>
+    <pd:name>Services/3/GeneralTester-S3.process</pd:name>
     <pd:startName>Start</pd:startName>
     <pd:startType wsMsgRef="wsdlPfx:Callback"/>
     <pd:startX>150</pd:startX>

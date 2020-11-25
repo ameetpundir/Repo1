@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BWSharedResource xmlns:inLine="http://xmlns.concrete3.com/1605777947534">
-    <name>ForCallback</name>
+    <name>Callback</name>
     <resourceType>ws.security.policy.association.resource</resourceType>
     <config>
         <applyTo>/Services/2/Service2Port1S2P1O1 (1).process/SOAPRequestReply</applyTo>
-        <systemSecuritySubject>/Services/2/Service2Port1S2P1O1 (1).process/S3P3Endpoint0/Callback</systemSecuritySubject>
+        <systemSecuritySubject>/Services/2/Service2Port1S2P1O1 (1).process/Endpoint3/O3</systemSecuritySubject>
         <inbound>
             <selectSignatureParts/>
             <selectEncryptionParts/>

@@ -2,24 +2,24 @@
 <!--Created by TIBCO WSDL-->
 <wsdl:definitions xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:jndi="http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi" xmlns:tns="http://xmlns.concrete3.com/1605777947534" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" name="Untitled" targetNamespace="http://xmlns.concrete3.com/1605777947534">
     <wsdl:types/>
-    <wsdl:service name="Service3">
-        <wsdl:port binding="tns:S3P3Endpoint0Binding" name="S3P3Endpoint0">
+    <wsdl:service name="GeneralTester-S3">
+        <wsdl:port binding="tns:Endpoint3Binding" name="Endpoint3">
             <soap:address location=""/>
             <jms:connectionFactory>QueueConnectionFactory</jms:connectionFactory>
             <jms:targetAddress destination="queue">queue.sample.gereraltester.3</jms:targetAddress>
         </wsdl:port>
     </wsdl:service>
-    <wsdl:portType name="S3P3">
-        <wsdl:operation name="Callback">
+    <wsdl:portType name="P3">
+        <wsdl:operation name="O3">
             <wsdl:input message="tns:Callback"/>
             <wsdl:output message="tns:Callback"/>
         </wsdl:operation>
     </wsdl:portType>
-    <wsdl:binding name="S3P3Endpoint0Binding" type="tns:S3P3">
+    <wsdl:binding name="Endpoint3Binding" type="tns:P3">
         <soap:binding style="document" transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
         <jms:binding messageFormat="Text"/>
-        <wsdl:operation name="Callback">
-            <soap:operation soapAction="S3P3" soapActionRequired="true" style="document"/>
+        <wsdl:operation name="O3">
+            <soap:operation soapAction="O3" soapActionRequired="true" style="document"/>
             <wsdl:input>
                 <soap:body parts="Callback" use="literal"/>
             </wsdl:input>

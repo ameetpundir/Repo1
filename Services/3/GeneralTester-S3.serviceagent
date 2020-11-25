@@ -3,27 +3,27 @@
     <ns0:import xmlns:ns0="http://schemas.xmlsoap.org/wsdl/" namespace="http://xmlns.abstract3.com/1605719165110" location="/SharedResources/WSDLs/Abstract/GeneralTesterAbstract3.wsdl"/>
     <config>
         <class>com.tibco.bw.service.serviceAgent.ServiceServiceAgent</class>
-        <name>Service3</name>
+        <name>GeneralTester-S3</name>
         <resourceType>service.definition</resourceType>
         <implType>bw</implType>
         <groups>
             <row isDefault="true" groupName="Default"/>
         </groups>
-        <serviceChange>Thu Nov 19 18:20:20 CET 2020</serviceChange>
+        <serviceChange>Mon Nov 23 15:28:13 CET 2020</serviceChange>
         <wsdl namespace="http://xmlns.concrete3.com/1605777947534" embedWsdlComponents="true" embedSchemaComponents="true" embedJndiProperties="false"/>
         <interfaceImpl>
             <tab>
                 <tabName>S3P3</tabName>
                 <tabType>bw</tabType>
                 <config>
-                    <wsdlDetail location="/SharedResources/WSDLs/Abstract/GeneralTesterAbstract3.wsdl" portType="S3P3" ns="http://xmlns.abstract3.com/1605719165110"/>
+                    <wsdlDetail location="/SharedResources/WSDLs/Abstract/GeneralTesterAbstract3.wsdl" portType="P3" ns="http://xmlns.abstract3.com/1605719165110"/>
                     <detail>
                         <tab>
                             <tabName>service.definition.impl.tab.label</tabName>
                             <tabType>impl</tabType>
                             <config>
                                 <operations>
-                                    <row opName="Callback" opImpl="/Services/3/S3P3Callback.process"/>
+                                    <row opName="O3" opImpl="/Services/3/GeneralTester-S3.process"/>
                                 </operations>
                             </config>
                         </tab>
@@ -32,7 +32,7 @@
                             <tabType>ep</tabType>
                             <config>
                                 <epBindings>
-                                    <row epName="S3P3Endpoint0" epType="soap">
+                                    <row epName="Endpoint3" epType="soap">
                                         <config>
                                             <epDetail>
                                                 <tab>
@@ -54,7 +54,7 @@
                                                                 <ApplicationPropertiesOutMessage/>
                                                                 <JMSMaxSessions/>
                                                                 <operations>
-                                                                    <operation name="Callback">
+                                                                    <operation name="O3">
                                                                         <general>
                                                                             <config>
                                                                                 <JMSDurable>false</JMSDurable>
@@ -74,10 +74,10 @@
                                                         <operationStyle>document</operationStyle>
                                                         <soapVersion>SOAP 1.2</soapVersion>
                                                         <soap>
-                                                            <operation name="Callback">
+                                                            <operation name="O3">
                                                                 <general>
                                                                     <config>
-                                                                        <soapAction>Callback</soapAction>
+                                                                        <soapAction>O3</soapAction>
                                                                         <operationStyle/>
                                                                         <soapUse>literal</soapUse>
                                                                         <inputNamespace/>

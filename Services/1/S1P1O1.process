@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pfx="http://www.tibco.com/schemas/GeneralTesterBW/Schema.xsd" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:ns="http://www.tibco.com/pe/GenerateErrorActivity/InputSchema" xmlns:wsdlPfx="http://xmlns.abstract.com/1605701777364">
     <wsdl:import namespace="http://xmlns.abstract.com/1605701777364" location="/GeneralTesterAbstract.wsdl"/>
-    <pd:name>Services/1/Port1P1O1.process</pd:name>
+    <pd:name>Services/1/S1P1O1.process</pd:name>
     <pd:startName>Start</pd:startName>
     <pd:startType wsMsgRef="wsdlPfx:IP"/>
     <pd:startX>150</pd:startX>

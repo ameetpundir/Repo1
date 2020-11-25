@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pfx="http://xmlns.concrete.com/1605702354501" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.abstract.com/1605701777364" xmlns:pfx3="http://xmlns.concrete.com/1605702600222" xmlns:pfx4="http://xmlns.final.com/1605702600222" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pfx="http://xmlns.concrete.com/1605702354501" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.abstract.com/1605701777364" xmlns:pfx3="http://xmlns.concrete.com/1605702600222" xmlns:pfx4="http://xmlns.final.com/1605702600222" xmlns:pfx5="http://xmlns.abstract2.com/1605716571040" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions">
     <wsdl:import namespace="http://xmlns.concrete.com/1605702600222" location="/SharedResources/WSDLs/Concrete/GeneralTesterConcrete.wsdl"/>
     <pd:name>InvokeBPMStarter.process</pd:name>
     <pd:startName>Start</pd:startName>
@@ -16,15 +16,15 @@
         <pd:type>com.tibco.plugin.soap.SOAPSendReceiveActivity</pd:type>
         <pd:resourceType>ae.activities.SOAPSendReceiveUI</pd:resourceType>
         <pd:x>467</pd:x>
-        <pd:y>64</pd:y>
+        <pd:y>63</pd:y>
         <config>
             <timeout>0</timeout>
             <soapAttachmentStyle>SwA</soapAttachmentStyle>
             <timeoutType>Seconds</timeoutType>
-            <service>pfx3:GeneralTester-service1</service>
-            <servicePort>Port1Endpoint1</servicePort>
-            <operation>P1O1</operation>
-            <soapAction>P1O1</soapAction>
+            <service>pfx3:GeneralTester-S1</service>
+            <servicePort>Endpoint1</servicePort>
+            <operation>O1</operation>
+            <soapAction>O1</soapAction>
             <sharedChannels>
                 <jmsChannel>
                     <targetService/>
@@ -32,9 +32,9 @@
                     <JMSTimeToLive>0</JMSTimeToLive>
                     <JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
                     <JMSMessageType>Text</JMSMessageType>
-                    <NamingURL/>
-                    <NamingInitialContextFactory/>
-                    <NamingPrincipal/>
+                    <NamingURL>tibjmsnaming://localhost:7222</NamingURL>
+                    <NamingInitialContextFactory>com.tibco.tibjms.naming.TibjmsInitialContextFactory</NamingInitialContextFactory>
+                    <NamingPrincipal>admin</NamingPrincipal>
                     <NamingCredential/>
                     <ConnectionFactory>QueueConnectionFactory</ConnectionFactory>
                     <JMSTo>queue.sample.gereraltester.1</JMSTo>

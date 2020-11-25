@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<BWSharedResource xmlns:pfx="http://xmlns.concrete.com/1605702600222" xmlns:inLine="http://www.dbenergie.com/services/soap/bpl/nbil/tfzzbelegerstellencallback/v1">
-    <name>InvokeBPMStarter</name>
+<BWSharedResource xmlns:inLine="http://xmlns.concrete.com/1605702600222">
+    <name>Security Policy Association</name>
     <resourceType>ws.security.policy.association.resource</resourceType>
     <config>
         <applyTo>/InvokeBPMStarter.process/SOAPRequestReply</applyTo>
-        <systemSecuritySubject>/InvokeBPMStarter.process/Port1Endpoint1/P1O1</systemSecuritySubject>
+        <systemSecuritySubject>/InvokeBPMStarter.process/Endpoint1/O1</systemSecuritySubject>
         <inbound>
             <selectSignatureParts/>
             <selectEncryptionParts/>

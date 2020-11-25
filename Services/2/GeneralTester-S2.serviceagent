@@ -3,27 +3,27 @@
     <ns0:import xmlns:ns0="http://schemas.xmlsoap.org/wsdl/" namespace="http://xmlns.abstract2.com/1605716571040" location="/SharedResources/WSDLs/Abstract/GeneralTesterAbstract2.wsdl"/>
     <config>
         <class>com.tibco.bw.service.serviceAgent.ServiceServiceAgent</class>
-        <name>GeneralTesterAbstract2-service13</name>
+        <name>GeneralTester-S2</name>
         <resourceType>service.definition</resourceType>
         <implType>bw</implType>
         <groups>
             <row isDefault="true" groupName="Default"/>
         </groups>
-        <serviceChange>Wed Nov 18 17:27:25 CET 2020</serviceChange>
+        <serviceChange>Mon Nov 23 15:49:22 CET 2020</serviceChange>
         <wsdl namespace="http://xmlns.concrete2.com/1605716782112" embedWsdlComponents="true" embedSchemaComponents="true" embedJndiProperties="false"/>
         <interfaceImpl>
             <tab>
                 <tabName>Service2Port1</tabName>
                 <tabType>bw</tabType>
                 <config>
-                    <wsdlDetail location="/SharedResources/WSDLs/Abstract/GeneralTesterAbstract2.wsdl" portType="Service2Port1" ns="http://xmlns.abstract2.com/1605716571040"/>
+                    <wsdlDetail location="/SharedResources/WSDLs/Abstract/GeneralTesterAbstract2.wsdl" portType="P2" ns="http://xmlns.abstract2.com/1605716571040"/>
                     <detail>
                         <tab>
                             <tabName>service.definition.impl.tab.label</tabName>
                             <tabType>impl</tabType>
                             <config>
                                 <operations>
-                                    <row opName="S2P1O1" opImpl="/Services/2/Service2Port1S2P1O1.process"/>
+                                    <row opName="O2" opImpl="/Services/2/S2P2O2.process"/>
                                 </operations>
                             </config>
                         </tab>
@@ -32,7 +32,7 @@
                             <tabType>ep</tabType>
                             <config>
                                 <epBindings>
-                                    <row epName="Service2Port1Endpoint13" epType="soap">
+                                    <row epName="Endpoint2" epType="soap">
                                         <config>
                                             <epDetail>
                                                 <tab>
@@ -44,7 +44,7 @@
                                                             <config>
                                                                 <JMSTo>queue.sample.gereraltester.2</JMSTo>
                                                                 <JMSDestinationType>queue</JMSDestinationType>
-                                                                <JMSMessageType>Bytes</JMSMessageType>
+                                                                <JMSMessageType>Text</JMSMessageType>
                                                                 <SoapJmsW3cFlag>false</SoapJmsW3cFlag>
                                                                 <targetService/>
                                                                 <useIncomingDeliveryMode>false</useIncomingDeliveryMode>
@@ -54,7 +54,7 @@
                                                                 <ApplicationPropertiesOutMessage/>
                                                                 <JMSMaxSessions/>
                                                                 <operations>
-                                                                    <operation name="S2P1O1">
+                                                                    <operation name="O2">
                                                                         <general>
                                                                             <config>
                                                                                 <JMSDurable>false</JMSDurable>
@@ -74,10 +74,10 @@
                                                         <operationStyle>document</operationStyle>
                                                         <soapVersion>SOAP 1.2</soapVersion>
                                                         <soap>
-                                                            <operation name="S2P1O1">
+                                                            <operation name="O2">
                                                                 <general>
                                                                     <config>
-                                                                        <soapAction>S2P1O1</soapAction>
+                                                                        <soapAction>O2</soapAction>
                                                                         <operationStyle/>
                                                                         <soapUse>literal</soapUse>
                                                                         <inputNamespace/>

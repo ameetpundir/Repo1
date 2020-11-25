@@ -1,48 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created by TIBCO WSDL-->
-<wsdl:definitions xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:jndi="http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi" xmlns:tns="http://xmlns.concrete2.com/1605716782112" xmlns:ns0="http://www.tibco.com/schemas/GeneralTesterBW/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" name="Untitled" targetNamespace="http://xmlns.concrete2.com/1605716782112">
-    <wsdl:types>
-        <xs:schema xmlns="http://www.tibco.com/schemas/GeneralTesterBW/Schema.xsd" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tibco.com/schemas/GeneralTesterBW/Schema.xsd">
-            <xs:element name="rootError" type="xs:anyType"/>
-        </xs:schema>
-    </wsdl:types>
-    <wsdl:service name="GeneralTesterAbstract2-service13">
-        <wsdl:port binding="tns:Service2Port1Endpoint13Binding" name="Service2Port1Endpoint13">
+<wsdl:definitions xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:jndi="http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi" xmlns:tns="http://xmlns.concrete2.com/1605716782112" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" name="Untitled" targetNamespace="http://xmlns.concrete2.com/1605716782112">
+    <wsdl:types/>
+    <wsdl:service name="GeneralTester-S2">
+        <wsdl:port binding="tns:Endpoint2Binding" name="Endpoint2">
             <soap:address location=""/>
             <jms:connectionFactory>QueueConnectionFactory</jms:connectionFactory>
             <jms:targetAddress destination="queue">queue.sample.gereraltester.2</jms:targetAddress>
         </wsdl:port>
     </wsdl:service>
-    <wsdl:portType name="Service2Port1">
-        <wsdl:operation name="S2P1O1">
+    <wsdl:portType name="P2">
+        <wsdl:operation name="O2">
             <wsdl:input message="tns:Input"/>
-            <wsdl:output message="tns:Output"/>
-            <wsdl:fault message="tns:Fault" name="fault1"/>
         </wsdl:operation>
     </wsdl:portType>
-    <wsdl:binding name="Service2Port1Endpoint13Binding" type="tns:Service2Port1">
+    <wsdl:binding name="Endpoint2Binding" type="tns:P2">
         <soap:binding style="document" transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
         <jms:binding messageFormat="bytes"/>
-        <wsdl:operation name="S2P1O1">
-            <soap:operation soapAction="S2P1O1" soapActionRequired="true" style="document"/>
+        <wsdl:operation name="O2">
+            <soap:operation soapAction="O2" soapActionRequired="true" style="document"/>
             <wsdl:input>
                 <soap:body parts="IP" use="literal"/>
             </wsdl:input>
-            <wsdl:output>
-                <soap:body parts="OP" use="literal"/>
-            </wsdl:output>
-            <wsdl:fault name="fault1">
-                <soap:fault name="fault1" use="literal"/>
-            </wsdl:fault>
         </wsdl:operation>
     </wsdl:binding>
     <wsdl:message name="Input">
         <wsdl:part name="IP" type="xs:string"/>
-    </wsdl:message>
-    <wsdl:message name="Output">
-        <wsdl:part name="OP" type="xs:string"/>
-    </wsdl:message>
-    <wsdl:message name="Fault">
-        <wsdl:part element="ns0:rootError" name="fault"/>
     </wsdl:message>
 </wsdl:definitions>

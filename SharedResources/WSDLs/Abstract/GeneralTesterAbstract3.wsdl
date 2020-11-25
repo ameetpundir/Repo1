@@ -7,8 +7,8 @@
     <message name="fault">
         <part name="Fault" element="ns:rootError"/>
     </message>
-    <portType name="S3P3">
-        <operation name="Callback">
+    <portType name="P3">
+        <operation name="O3">
             <input message="tns:Callback"/>
             <output message="tns:Callback"/>
         </operation>

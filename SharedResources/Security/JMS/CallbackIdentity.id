@@ -8,7 +8,7 @@
             <fixedChildren/>
             <resourceDescriptions/>
         </designer>
-        <username>tibco-admin</username>
+        <username>tibco-admi</username>
         <password>secret</password>
     </identity>
 </Repository:repository>

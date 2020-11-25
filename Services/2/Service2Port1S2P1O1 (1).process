@@ -15,7 +15,7 @@
         </wsdlPfx:Output>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
-    <pd:endType wsMsgRef="wsdlPfx:Output"/>
+    <pd:endType/>
     <pd:endX>450</pd:endX>
     <pd:endY>64</pd:endY>
     <pd:errorSchemas>
@@ -32,10 +32,10 @@
             <timeout>0</timeout>
             <soapAttachmentStyle>SwA</soapAttachmentStyle>
             <timeoutType>Seconds</timeoutType>
-            <service>pfx:Service3</service>
-            <servicePort>S3P3Endpoint0</servicePort>
-            <operation>Callback</operation>
-            <soapAction>Callback</soapAction>
+            <service>pfx:GeneralTester-S3</service>
+            <servicePort>Endpoint3</servicePort>
+            <operation>O3</operation>
+            <soapAction>O3</soapAction>
             <sharedChannels>
                 <jmsChannel>
                     <targetService/>

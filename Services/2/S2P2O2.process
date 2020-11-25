@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pfx="http://xmlns.concrete3.com/1605777947534" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.concrete.com/1605702354501" xmlns:pfx3="http://xmlns.concrete.com/1605702600222" xmlns:wsdlPfx="http://xmlns.abstract2.com/1605716571040">
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pfx="http://xmlns.concrete3.com/1605777947534" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx2="http://xmlns.concrete.com/1605702354501" xmlns:pfx3="http://xmlns.concrete.com/1605702600222" xmlns:ns="www.tibco.com/plugin/Sleep" xmlns:wsdlPfx="http://xmlns.abstract2.com/1605716571040">
     <wsdl:import namespace="http://xmlns.abstract2.com/1605716571040" location="/SharedResources/WSDLs/Abstract/GeneralTesterAbstract2.wsdl"/>
     <wsdl:import namespace="http://xmlns.concrete3.com/1605777947534" location="/SharedResources/WSDLs/Concrete/GeneralTesterConcrete3.wsdl"/>
-    <pd:name>Services/2/Service2Port1S2P1O1.process</pd:name>
+    <pd:name>Services/2/S2P2O2.process</pd:name>
     <pd:startName>Start</pd:startName>
     <pd:startType wsMsgRef="wsdlPfx:Input"/>
     <pd:startX>150</pd:startX>
@@ -15,12 +15,9 @@
         </wsdlPfx:Output>
     </pd:returnBindings>
     <pd:endName>End</pd:endName>
-    <pd:endType wsMsgRef="wsdlPfx:Output"/>
     <pd:endX>450</pd:endX>
     <pd:endY>64</pd:endY>
-    <pd:errorSchemas>
-        <Schema1 wsMsgRef="wsdlPfx:Fault"/>
-    </pd:errorSchemas>
+    <pd:errorSchemas/>
     <pd:processVariables/>
     <pd:targetNamespace>http://xmlns.example.com/1605716782119</pd:targetNamespace>
     <pd:activity name="Service2Port1S2P1O1 (1)">
@@ -40,9 +37,23 @@
             </wsdlPfx:Input>
         </pd:inputBindings>
     </pd:activity>
+    <pd:activity name="Sleep">
+        <pd:type>com.tibco.plugin.timer.SleepActivity</pd:type>
+        <pd:resourceType>ae.activities.sleep</pd:resourceType>
+        <pd:x>218</pd:x>
+        <pd:y>172</pd:y>
+        <config/>
+        <pd:inputBindings>
+            <ns:SleepInputSchema>
+                <IntervalInMillisec>
+                    <xsl:value-of select="6000"/>
+                </IntervalInMillisec>
+            </ns:SleepInputSchema>
+        </pd:inputBindings>
+    </pd:activity>
     <pd:transition>
         <pd:from>Start</pd:from>
-        <pd:to>Service2Port1S2P1O1 (1)</pd:to>
+        <pd:to>Sleep</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>always</pd:conditionType>
@@ -50,6 +61,13 @@
     <pd:transition>
         <pd:from>Service2Port1S2P1O1 (1)</pd:from>
         <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Sleep</pd:from>
+        <pd:to>Service2Port1S2P1O1 (1)</pd:to>
         <pd:lineType>Default</pd:lineType>
         <pd:lineColor>-16777216</pd:lineColor>
         <pd:conditionType>always</pd:conditionType>

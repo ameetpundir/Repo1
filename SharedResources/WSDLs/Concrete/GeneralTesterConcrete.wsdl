@@ -1,55 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Created by TIBCO WSDL-->
-<wsdl:definitions xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:jndi="http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi" xmlns:tns="http://xmlns.concrete.com/1605702600222" xmlns:ns0="http://www.tibco.com/schemas/GeneralTesterBW/Schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" name="Untitled" targetNamespace="http://xmlns.concrete.com/1605702600222">
-    <wsdl:types>
-        <xs:schema xmlns="http://www.tibco.com/schemas/GeneralTesterBW/Schema.xsd" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tibco.com/schemas/GeneralTesterBW/Schema.xsd">
-            <xs:element name="rootError" type="xs:anyType"/>
-        </xs:schema>
-    </wsdl:types>
-    <wsdl:service name="GeneralTester-service1">
-        <wsdl:port binding="tns:Port1Endpoint1Binding" name="Port1Endpoint1">
+<wsdl:definitions xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:jndi="http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi" xmlns:tns="http://xmlns.concrete.com/1605702600222" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" name="Untitled" targetNamespace="http://xmlns.concrete.com/1605702600222">
+    <wsdl:types/>
+    <wsdl:service name="GeneralTester-S1">
+        <wsdl:port binding="tns:Endpoint1Binding" name="Endpoint1">
             <soap:address location=""/>
             <jms:connectionFactory>QueueConnectionFactory</jms:connectionFactory>
             <jms:targetAddress destination="queue">queue.sample.gereraltester.1</jms:targetAddress>
         </wsdl:port>
     </wsdl:service>
-    <wsdl:portType name="Port1">
-        <wsdl:operation name="P1O3">
-            <wsdl:input message="tns:OP"/>
-        </wsdl:operation>
-        <wsdl:operation name="P1O2">
-            <wsdl:input message="tns:IP"/>
-            <wsdl:output message="tns:OP"/>
-            <wsdl:fault message="tns:Fault" name="fault1"/>
-        </wsdl:operation>
-        <wsdl:operation name="P1O1">
+    <wsdl:portType name="P1">
+        <wsdl:operation name="O1">
             <wsdl:input message="tns:IP"/>
             <wsdl:output message="tns:OP"/>
         </wsdl:operation>
     </wsdl:portType>
-    <wsdl:binding name="Port1Endpoint1Binding" type="tns:Port1">
+    <wsdl:binding name="Endpoint1Binding" type="tns:P1">
         <soap:binding style="document" transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
         <jms:binding messageFormat="Text"/>
-        <wsdl:operation name="P1O3">
-            <soap:operation soapAction="P1O3" soapActionRequired="true" style="document"/>
-            <wsdl:input>
-                <soap:body parts="Output" use="literal"/>
-            </wsdl:input>
-        </wsdl:operation>
-        <wsdl:operation name="P1O2">
-            <soap:operation soapAction="P1O2" soapActionRequired="true" style="document"/>
-            <wsdl:input>
-                <soap:body parts="Input" use="literal"/>
-            </wsdl:input>
-            <wsdl:output>
-                <soap:body parts="Output" use="literal"/>
-            </wsdl:output>
-            <wsdl:fault name="fault1">
-                <soap:fault name="fault1" use="literal"/>
-            </wsdl:fault>
-        </wsdl:operation>
-        <wsdl:operation name="P1O1">
-            <soap:operation soapAction="P1O1" soapActionRequired="true" style="document"/>
+        <wsdl:operation name="O1">
+            <soap:operation soapAction="O1" soapActionRequired="true" style="document"/>
             <wsdl:input>
                 <soap:body parts="Input" use="literal"/>
             </wsdl:input>
@@ -58,13 +28,10 @@
             </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>
-    <wsdl:message name="OP">
-        <wsdl:part name="Output" type="xs:string"/>
-    </wsdl:message>
     <wsdl:message name="IP">
         <wsdl:part name="Input" type="xs:string"/>
     </wsdl:message>
-    <wsdl:message name="Fault">
-        <wsdl:part element="ns0:rootError" name="fault"/>
+    <wsdl:message name="OP">
+        <wsdl:part name="Output" type="xs:string"/>
     </wsdl:message>
 </wsdl:definitions>
