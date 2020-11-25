@@ -1,0 +1,35 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions name = "Untitled" targetNamespace = "http://xmlns.concrete3.com/1605777947534" xmlns:jms = "http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:jndi = "http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi" xmlns:soap = "http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns = "http://xmlns.concrete3.com/1605777947534" xmlns:wsdl = "http://schemas.xmlsoap.org/wsdl/" xmlns:xs = "http://www.w3.org/2001/XMLSchema">    
+	<wsdl:types/>    
+	<wsdl:service name = "GeneralTester-S3">        
+		<wsdl:port binding = "tns:Endpoint3Binding" name = "Endpoint3">            
+			<soap:address location = ""/>            
+			<jms:connectionFactory>QueueConnectionFactory</jms:connectionFactory>            
+			<jms:targetAddress destination = "queue">queue.sample.gereraltester.3</jms:targetAddress>        
+		</wsdl:port>    
+	</wsdl:service>    
+	<wsdl:portType name = "P3">        
+		<wsdl:operation name = "O3">            
+			<wsdl:input message = "tns:Callback"/>            
+			<wsdl:output message = "tns:Callback"/>        
+		</wsdl:operation>    
+	</wsdl:portType>    
+	<wsdl:binding name = "Endpoint3Binding" type = "tns:P3">        
+		<soap:binding style = "document" transport = "http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>        
+		<jms:binding messageFormat = "Text"/>        
+		<wsdl:operation name = "O3">            
+			<soap:operation soapAction = "O3" soapActionRequired = "true" style = "document"/>            
+			<wsdl:input>                
+				<soap:body parts = "Callback" use = "literal"/>            
+			</wsdl:input>            
+			<wsdl:output>                
+				<soap:body parts = "Callback" use = "literal"/>            
+			</wsdl:output>        
+		</wsdl:operation>    
+	</wsdl:binding>    
+	<wsdl:message name = "Callback">        
+		<wsdl:part name = "Callback" type = "xs:string"/>    
+	</wsdl:message>
+</wsdl:definitions>

@@ -1,0 +1,31 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions name = "Untitled" targetNamespace = "http://xmlns.concrete2.com/1605716782112" xmlns:jms = "http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:jndi = "http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi" xmlns:soap = "http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns = "http://xmlns.concrete2.com/1605716782112" xmlns:wsdl = "http://schemas.xmlsoap.org/wsdl/" xmlns:xs = "http://www.w3.org/2001/XMLSchema">    
+	<wsdl:types/>    
+	<wsdl:service name = "GeneralTester-S2">        
+		<wsdl:port binding = "tns:Endpoint2Binding" name = "Endpoint2">            
+			<soap:address location = ""/>            
+			<jms:connectionFactory>QueueConnectionFactory</jms:connectionFactory>            
+			<jms:targetAddress destination = "queue">queue.sample.gereraltester.2</jms:targetAddress>        
+		</wsdl:port>    
+	</wsdl:service>    
+	<wsdl:portType name = "P2">        
+		<wsdl:operation name = "O2">            
+			<wsdl:input message = "tns:Input"/>        
+		</wsdl:operation>    
+	</wsdl:portType>    
+	<wsdl:binding name = "Endpoint2Binding" type = "tns:P2">        
+		<soap:binding style = "document" transport = "http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>        
+		<jms:binding messageFormat = "bytes"/>        
+		<wsdl:operation name = "O2">            
+			<soap:operation soapAction = "O2" soapActionRequired = "true" style = "document"/>            
+			<wsdl:input>                
+				<soap:body parts = "IP" use = "literal"/>            
+			</wsdl:input>        
+		</wsdl:operation>    
+	</wsdl:binding>    
+	<wsdl:message name = "Input">        
+		<wsdl:part name = "IP" type = "xs:string"/>    
+	</wsdl:message>
+</wsdl:definitions>

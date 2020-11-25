@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+    xmlns="http://xmlns.concrete2.com/1605716782112" xmlns:tns2="http://xmlns.concrete2.com/1605716782112"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.concrete2.com/1605716782112">
+  <xsd:annotation>
+    <xsd:documentation>BOMORIGIN::/GeneralBPMTester/Generated Business Objects/com.concrete2.xmlns._1605716782112.bom</xsd:documentation>
+  </xsd:annotation>
+</xsd:schema>

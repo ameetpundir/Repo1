@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xpdl2:Package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:database="http://www.tibco.com/XPD/database1.0.0" xmlns:eaijava="http://www.tibco.com/XPD/EAIJava1.0.0" xmlns:email="http://www.tibco.com/XPD/email1.0.0" xmlns:iProcessExt="http://www.tibco.com/XPD/iProcessExt1.0.0" xmlns:orchestrator="http://www.tibco.com/XPD/orchestrator1.0.0" xmlns:order="http://www.tibco.com/XPD/order1.0.0" xmlns:simulation="http://www.tibco.com/xpd/Simulation1.0.1" xmlns:xpdExt="http://www.tibco.com/XPD/xpdExtension1.0.0" xmlns:xpdl2="http://www.wfmc.org/2008/XPDL2.1" xsi:schemaLocation="http://www.wfmc.org/2008/XPDL2.1 http://www.wfmc.org/standards/bpmnxpdl_31.xsd" Id="_puwVcCmjEeuXT_-RpQh5SA" xpdExt:DisplayName="GeneralBPMTester" Name="GeneralBPMTester">
+  <xpdl2:PackageHeader xpdExt:Language="en_IN">
+    <xpdl2:XPDLVersion>2.1</xpdl2:XPDLVersion>
+    <xpdl2:Vendor>TIBCO</xpdl2:Vendor>
+    <xpdl2:Created>2020-11-18</xpdl2:Created>
+    <xpdl2:Description></xpdl2:Description>
+    <xpdl2:Documentation></xpdl2:Documentation>
+    <xpdl2:CostUnit>INR</xpdl2:CostUnit>
+  </xpdl2:PackageHeader>
+  <xpdl2:RedefinableHeader PublicationStatus="UNDER_REVISION">
+    <xpdl2:Author>AmitPundir</xpdl2:Author>
+    <xpdl2:Version>1.1.0.qualifier</xpdl2:Version>
+  </xpdl2:RedefinableHeader>
+  <xpdl2:Participants>
+    <xpdl2:Participant Id="_WwkXsCmkEeuXT_-RpQh5SA" xpdExt:DisplayName="GeneralParticipant1" Name="GeneralParticipant1">
+      <xpdl2:ParticipantType Type="SYSTEM"/>
+      <xpdExt:ParticipantSharedResource>
+        <xpdExt:WebService>
+          <xpdExt:Inbound>
+            <xpdExt:VirtualBinding Name="Virtualization"/>
+            <xpdExt:SoapJmsBinding Name="SoapOverJms" BindingStyle="DocumentLiteral" SoapVersion="1.2" ConnectionFactory="BPL_JMSConnectionFactory_Netz" ConnectionFactoryConfigurator="JMSConnectionFactoryConfiguration_Netz" InboundDestination="General_BPM_TEST_1"/>
+          </xpdExt:Inbound>
+        </xpdExt:WebService>
+      </xpdExt:ParticipantSharedResource>
+    </xpdl2:Participant>
+    <xpdl2:Participant Id="_RayhoCmrEeuXT_-RpQh5SA" xpdExt:DisplayName="GeneralParticipant2" Name="GeneralParticipant2">
+      <xpdl2:ParticipantType Type="SYSTEM"/>
+      <xpdExt:ParticipantSharedResource>
+        <xpdExt:WebService>
+          <xpdExt:Outbound>
+            <xpdExt:SoapJmsBinding OutboundConnectionFactory="BPL_JMSConnectionFactory_Netz" InboundDestination="" OutboundDestination="General_BPM_TEST_2" DeliveryMode="PERSISTENT" Priority="4"/>
+          </xpdExt:Outbound>
+        </xpdExt:WebService>
+      </xpdExt:ParticipantSharedResource>
+    </xpdl2:Participant>
+    <xpdl2:Participant Id="_lWQKQSpKEeuFK4vUERYa3A" xpdExt:DisplayName="GeneralParticipant3" Name="GeneralParticipant3">
+      <xpdl2:ParticipantType Type="SYSTEM"/>
+      <xpdExt:ParticipantSharedResource>
+        <xpdExt:WebService>
+          <xpdExt:Inbound>
+            <xpdExt:VirtualBinding Name="Virtualization"/>
+            <xpdExt:SoapJmsBinding Name="SoapOverJms" BindingStyle="DocumentLiteral" SoapVersion="1.2" ConnectionFactory="BPL_JMSConnectionFactory_Netz" ConnectionFactoryConfigurator="JMSConnectionFactoryConfiguration_Netz" InboundDestination="General_BPM_TEST_3"/>
+          </xpdExt:Inbound>
+        </xpdExt:WebService>
+      </xpdExt:ParticipantSharedResource>
+    </xpdl2:Participant>
+  </xpdl2:Participants>
+  <xpdl2:Pools>
+    <xpdl2:Pool Id="_urZOkCmjEeuXT_-RpQh5SA" xpdExt:DisplayName="Pool" Name="Pool" BoundaryVisible="true" Process="_puxjkCmjEeuXT_-RpQh5SA">
+      <xpdl2:Lanes>
+        <xpdl2:Lane Id="_urZOkSmjEeuXT_-RpQh5SA" xpdExt:DisplayName="Lane" Name="Lane">
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo Height="314.0"/>
+          </xpdl2:NodeGraphicsInfos>
+        </xpdl2:Lane>
+      </xpdl2:Lanes>
+      <xpdl2:NodeGraphicsInfos>
+        <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="223,179,0" IsVisible="true"/>
+      </xpdl2:NodeGraphicsInfos>
+    </xpdl2:Pool>
+  </xpdl2:Pools>
+  <xpdl2:WorkflowProcesses>
+    <xpdl2:WorkflowProcess Id="_puxjkCmjEeuXT_-RpQh5SA" xpdExt:DisplayName="GeneralBPMTester-Process" Name="GeneralBPMTesterProcess">
+      <xpdl2:ProcessHeader>
+        <xpdl2:Description></xpdl2:Description>
+      </xpdl2:ProcessHeader>
+      <xpdl2:DataFields>
+        <xpdl2:DataField Id="_OXEm0CpMEeuFK4vUERYa3A" xpdExt:DisplayName="CallbackCorrelate" Name="CallbackCorrelate" ReadOnly="false" Correlation="true">
+          <xpdl2:DataType>
+            <xpdl2:BasicType Type="STRING">
+              <xpdl2:Length>50</xpdl2:Length>
+            </xpdl2:BasicType>
+          </xpdl2:DataType>
+        </xpdl2:DataField>
+      </xpdl2:DataFields>
+      <xpdl2:Activities>
+        <xpdl2:Activity Id="_urZOkymjEeuXT_-RpQh5SA" Name="EndEvent" xpdExt:DisplayName="End Event">
+          <xpdl2:Event>
+            <xpdl2:EndEvent Result="None"/>
+          </xpdl2:Event>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="30.0" LaneId="_urZOkSmjEeuXT_-RpQh5SA" Width="30.0">
+              <xpdl2:Coordinates XCoordinate="592.0" YCoordinate="155.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+          <xpdl2:Extensions/>
+          <xpdExt:Audit>
+            <xpdExt:AuditEvent Type="Initiated">
+              <xpdExt:Information ScriptGrammar="JavaScript">Log.write(&quot;General BPM Tester Ends with CallbackCorrelate = &quot;+CallbackCorrelate);</xpdExt:Information>
+            </xpdExt:AuditEvent>
+          </xpdExt:Audit>
+        </xpdl2:Activity>
+        <xpdl2:Activity Id="_Mxc_ACmrEeuXT_-RpQh5SA" Name="SendTask" IsATransaction="false" xpdExt:Visibility="Private" xpdExt:RequireNewTransaction="false" xpdExt:DisplayName="Send Task">
+          <xpdl2:Implementation>
+            <xpdl2:Task>
+              <xpdl2:TaskSend xpdExt:ImplementationType="WebService" Implementation="WebService">
+                <xpdl2:Message Id="_bMzEkC2YEeuGVJJJMRLYnw">
+                  <xpdExt:InputMappings MapperContext="InputToService" MappingDirection="IN">
+                    <xpdExt:DataMappings>
+                      <xpdExt:DataMapping xpdExt:SourceContributorId="ActivityInterface.DataMapperContent" xpdExt:TargetContributorId="InputToService.DataMapperContent" Direction="IN" Formal="IP">
+                        <xpdl2:Actual ScriptGrammar="JavaScript">CallbackCorrelate</xpdl2:Actual>
+                      </xpdExt:DataMapping>
+                    </xpdExt:DataMappings>
+                  </xpdExt:InputMappings>
+                </xpdl2:Message>
+                <xpdl2:WebServiceOperation xpdExt:SecurityProfile="" xpdExt:Transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xpdExt:Alias="_RayhoCmrEeuXT_-RpQh5SA" OperationName="O2">
+                  <xpdl2:Service xpdExt:IsRemote="true" PortName="Endpoint2" ServiceName="GeneralTester-S2">
+                    <xpdl2:EndPoint EndPointType="WSDL">
+                      <xpdl2:ExternalReference location="GeneralTesterConcrete2.wsdl"/>
+                    </xpdl2:EndPoint>
+                  </xpdl2:Service>
+                </xpdl2:WebServiceOperation>
+                <xpdExt:PortTypeOperation PortTypeName="P2" OperationName="O2">
+                  <xpdExt:ExternalReference location="GeneralTesterConcrete2.wsdl"/>
+                </xpdExt:PortTypeOperation>
+              </xpdl2:TaskSend>
+            </xpdl2:Task>
+          </xpdl2:Implementation>
+          <xpdl2:Performers>
+            <xpdl2:Performer>_RayhoCmrEeuXT_-RpQh5SA</xpdl2:Performer>
+          </xpdl2:Performers>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="64.0" LaneId="_urZOkSmjEeuXT_-RpQh5SA" Width="96.0">
+              <xpdl2:Coordinates XCoordinate="239.0" YCoordinate="49.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+          <xpdl2:Extensions/>
+          <xpdExt:Audit>
+            <xpdExt:AuditEvent Type="Initiated">
+              <xpdExt:Information ScriptGrammar="JavaScript">Log.write(&quot;Send task started with CallbackCorrelate = &quot;+CallbackCorrelate);</xpdExt:Information>
+            </xpdExt:AuditEvent>
+            <xpdExt:AuditEvent Type="Completed">
+              <xpdExt:Information ScriptGrammar="JavaScript">Log.write(&quot;Send task completed with CallbackCorrelate = &quot;+CallbackCorrelate);</xpdExt:Information>
+            </xpdExt:AuditEvent>
+          </xpdExt:Audit>
+          <xpdExt:ActivityResourcePatterns>
+            <xpdExt:AllocationStrategy xpdExt:Strategy="SYSTEM_DETERMINED"/>
+          </xpdExt:ActivityResourcePatterns>
+        </xpdl2:Activity>
+        <xpdl2:Activity Id="_PKiwwCnAEeuXT_-RpQh5SA" Name="ReceiveTask" xpdExt:Visibility="Private" xpdExt:DisplayName="Receive Task">
+          <xpdl2:Implementation>
+            <xpdl2:Task>
+              <xpdl2:TaskReceive xpdExt:ImplementationType="WebService" xpdExt:CorrelateImmediately="false" Implementation="WebService" Instantiate="false">
+                <xpdl2:Message Id="_dk910C2YEeuGVJJJMRLYnw">
+                  <xpdExt:OutputMappings MapperContext="InputToProcess" MappingDirection="OUT">
+                    <xpdExt:DataMappings>
+                      <xpdExt:DataMapping xpdExt:SourceContributorId="InputToProcess.DataMapperContent" xpdExt:TargetContributorId="OutputFromServiceToCorrelation.DataMapperContent" Direction="IN" Formal="CallbackCorrelate">
+                        <xpdl2:Actual ScriptGrammar="JavaScript">Callback</xpdl2:Actual>
+                      </xpdExt:DataMapping>
+                    </xpdExt:DataMappings>
+                  </xpdExt:OutputMappings>
+                </xpdl2:Message>
+                <xpdl2:WebServiceOperation xpdExt:SecurityProfile="" xpdExt:Transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xpdExt:Alias="_lWQKQSpKEeuFK4vUERYa3A" OperationName="O3">
+                  <xpdl2:Service xpdExt:IsRemote="true" PortName="Endpoint3" ServiceName="GeneralTester-S3">
+                    <xpdl2:EndPoint EndPointType="WSDL">
+                      <xpdl2:ExternalReference location="GeneralTesterConcrete3.wsdl"/>
+                    </xpdl2:EndPoint>
+                  </xpdl2:Service>
+                </xpdl2:WebServiceOperation>
+                <xpdExt:PortTypeOperation PortTypeName="P3" OperationName="O3">
+                  <xpdExt:ExternalReference location="GeneralTesterConcrete3.wsdl"/>
+                </xpdExt:PortTypeOperation>
+              </xpdl2:TaskReceive>
+            </xpdl2:Task>
+          </xpdl2:Implementation>
+          <xpdl2:Performers>
+            <xpdl2:Performer>_lWQKQSpKEeuFK4vUERYa3A</xpdl2:Performer>
+          </xpdl2:Performers>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="64.0" LaneId="_urZOkSmjEeuXT_-RpQh5SA" Width="96.0">
+              <xpdl2:Coordinates XCoordinate="421.0" YCoordinate="49.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+          <xpdl2:Extensions/>
+          <xpdExt:ActivityResourcePatterns>
+            <xpdExt:AllocationStrategy xpdExt:Strategy="SYSTEM_DETERMINED"/>
+          </xpdExt:ActivityResourcePatterns>
+          <xpdExt:AssociatedCorrelationFields>
+            <xpdExt:AssociatedCorrelationField Name="CallbackCorrelate" CorrelationMode="Correlate"/>
+          </xpdExt:AssociatedCorrelationFields>
+          <xpdExt:Audit>
+            <xpdExt:AuditEvent Type="Initiated">
+              <xpdExt:Information ScriptGrammar="JavaScript">Log.write(&quot;Receive task started with CallbackCorrelate = &quot;+CallbackCorrelate);</xpdExt:Information>
+            </xpdExt:AuditEvent>
+            <xpdExt:AuditEvent Type="Completed">
+              <xpdExt:Information ScriptGrammar="JavaScript">Log.write(&quot;Receive task Completed with CallbackCorrelate = &quot;+CallbackCorrelate);</xpdExt:Information>
+            </xpdExt:AuditEvent>
+          </xpdExt:Audit>
+        </xpdl2:Activity>
+        <xpdl2:Activity Id="_nsuTwCqJEeuFK4vUERYa3A" Name="ReplyToReceiveTask" xpdExt:Visibility="Private" xpdExt:DisplayName="Reply To: Receive Task">
+          <xpdl2:Event>
+            <xpdl2:IntermediateEvent xpdExt:ImplementationType="WebService" Implementation="WebService" Trigger="Message">
+              <xpdl2:TriggerResultMessage xpdExt:ReplyToActivityId="_PKiwwCnAEeuXT_-RpQh5SA" CatchThrow="THROW">
+                <xpdl2:Message Id="_dlQJsC2YEeuGVJJJMRLYnw">
+                  <xpdExt:InputMappings MapperContext="OutputFromProcess" MappingDirection="IN">
+                    <xpdExt:DataMappings>
+                      <xpdExt:DataMapping xpdExt:SourceContributorId="ProcessManager.DataMapperContent" xpdExt:TargetContributorId="OutputFromProcess.DataMapperContent" Direction="IN" Formal="Callback">
+                        <xpdl2:Actual ScriptGrammar="JavaScript">Process_id$</xpdl2:Actual>
+                      </xpdExt:DataMapping>
+                    </xpdExt:DataMappings>
+                  </xpdExt:InputMappings>
+                </xpdl2:Message>
+                <xpdl2:WebServiceOperation xpdExt:SecurityProfile="" xpdExt:Transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xpdExt:Alias="_lWQKQSpKEeuFK4vUERYa3A" OperationName="O3">
+                  <xpdl2:Service xpdExt:IsRemote="true" PortName="Endpoint3" ServiceName="GeneralTester-S3">
+                    <xpdl2:EndPoint EndPointType="WSDL">
+                      <xpdl2:ExternalReference location="GeneralTesterConcrete3.wsdl"/>
+                    </xpdl2:EndPoint>
+                  </xpdl2:Service>
+                </xpdl2:WebServiceOperation>
+                <xpdExt:PortTypeOperation PortTypeName="P3" OperationName="O3">
+                  <xpdExt:ExternalReference location="GeneralTesterConcrete3.wsdl"/>
+                </xpdExt:PortTypeOperation>
+              </xpdl2:TriggerResultMessage>
+            </xpdl2:IntermediateEvent>
+          </xpdl2:Event>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="62.0" LaneId="_urZOkSmjEeuXT_-RpQh5SA" Width="67.0">
+              <xpdl2:Coordinates XCoordinate="560.0" YCoordinate="64.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+        </xpdl2:Activity>
+        <xpdl2:Activity Id="_RsWMkC2ZEeuGVJJJMRLYnw" Name="CatchMessageEvent" xpdExt:Visibility="Private" xpdExt:DisplayName="Catch Message Event">
+          <xpdl2:Event>
+            <xpdl2:StartEvent xpdExt:ImplementationType="WebService" Implementation="WebService" Trigger="Message">
+              <xpdl2:TriggerResultMessage xpdExt:Generated="false" xpdExt:ReplyImmediate="true" CatchThrow="CATCH">
+                <xpdl2:Message Id="_RsWMkS2ZEeuGVJJJMRLYnw">
+                  <xpdExt:ReplyImmediateDataMappings>
+                    <xpdExt:DataMapping xpdExt:SourcePrimitiveProperty="false" Direction="IN" Formal="wso:O1/part:Output">
+                      <xpdl2:Actual ScriptGrammar="XPath">__PROCESS_ID__</xpdl2:Actual>
+                    </xpdExt:DataMapping>
+                  </xpdExt:ReplyImmediateDataMappings>
+                  <xpdExt:OutputMappings MapperContext="InputToProcess" MappingDirection="OUT">
+                    <xpdExt:DataMappings>
+                      <xpdExt:DataMapping xpdExt:SourceContributorId="InputToProcess.DataMapperContent" xpdExt:TargetContributorId="OutputFromServiceToCorrelation.DataMapperContent" Direction="IN" Formal="CallbackCorrelate">
+                        <xpdl2:Actual ScriptGrammar="JavaScript">Input</xpdl2:Actual>
+                      </xpdExt:DataMapping>
+                    </xpdExt:DataMappings>
+                  </xpdExt:OutputMappings>
+                </xpdl2:Message>
+                <xpdl2:WebServiceOperation xpdExt:SecurityProfile="" xpdExt:Transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xpdExt:Alias="_WwkXsCmkEeuXT_-RpQh5SA" OperationName="O1">
+                  <xpdl2:Service xpdExt:IsRemote="true" PortName="Endpoint1" ServiceName="GeneralTester-S1">
+                    <xpdl2:EndPoint EndPointType="WSDL">
+                      <xpdl2:ExternalReference location="GeneralTesterConcrete.wsdl"/>
+                    </xpdl2:EndPoint>
+                  </xpdl2:Service>
+                </xpdl2:WebServiceOperation>
+                <xpdExt:PortTypeOperation PortTypeName="P1" OperationName="O1">
+                  <xpdExt:ExternalReference location="GeneralTesterConcrete.wsdl"/>
+                </xpdExt:PortTypeOperation>
+              </xpdl2:TriggerResultMessage>
+            </xpdl2:StartEvent>
+          </xpdl2:Event>
+          <xpdl2:Performers>
+            <xpdl2:Performer>_WwkXsCmkEeuXT_-RpQh5SA</xpdl2:Performer>
+          </xpdl2:Performers>
+          <xpdl2:NodeGraphicsInfos>
+            <xpdl2:NodeGraphicsInfo BorderColor="0,0,128" FillColor="255,219,74" Height="27.0" LaneId="_urZOkSmjEeuXT_-RpQh5SA" Width="27.0">
+              <xpdl2:Coordinates XCoordinate="84.0" YCoordinate="30.0"/>
+            </xpdl2:NodeGraphicsInfo>
+          </xpdl2:NodeGraphicsInfos>
+          <xpdl2:Extensions/>
+          <xpdExt:ActivityResourcePatterns>
+            <xpdExt:AllocationStrategy xpdExt:Strategy="SYSTEM_DETERMINED"/>
+          </xpdExt:ActivityResourcePatterns>
+          <xpdExt:NamespacePrefixMap>
+            <xpdExt:NamespaceEntries>
+              <xpdExt:NamespaceEntry Prefix="tns" Namespace="http://xmlns.concrete.com/1605702600222"/>
+              <xpdExt:NamespaceEntry Prefix="wsdl" Namespace="http://schemas.xmlsoap.org/wsdl/"/>
+              <xpdExt:NamespaceEntry Prefix="jms" Namespace="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
+              <xpdExt:NamespaceEntry Prefix="xs" Namespace="http://www.w3.org/2001/XMLSchema"/>
+              <xpdExt:NamespaceEntry Prefix="soap" Namespace="http://schemas.xmlsoap.org/wsdl/soap12/"/>
+              <xpdExt:NamespaceEntry Prefix="jndi" Namespace="http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi"/>
+            </xpdExt:NamespaceEntries>
+          </xpdExt:NamespacePrefixMap>
+          <xpdExt:Audit>
+            <xpdExt:AuditEvent Type="Completed">
+              <xpdExt:Information ScriptGrammar="JavaScript">CallbackCorrelate = Process.getId();&#xD;
+Log.write(&quot;General tester started with Pid&quot;+CallbackCorrelate);</xpdExt:Information>
+            </xpdExt:AuditEvent>
+          </xpdExt:Audit>
+        </xpdl2:Activity>
+      </xpdl2:Activities>
+      <xpdl2:Transitions>
+        <xpdl2:Transition Id="_bLGpUCmkEeuXT_-RpQh5SA" xpdExt:DisplayName="" Name="" From="_PKiwwCnAEeuXT_-RpQh5SA" To="_nsuTwCqJEeuFK4vUERYa3A">
+          <xpdl2:ConnectorGraphicsInfos>
+            <xpdl2:ConnectorGraphicsInfo BorderColor="0,0,128" ToolId="XPD.ConnectionInfo"/>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.LabelAnchorPosition"/>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.StartAnchorPosition"/>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.EndAnchorPosition"/>
+          </xpdl2:ConnectorGraphicsInfos>
+        </xpdl2:Transition>
+        <xpdl2:Transition Id="_PKjX0CnAEeuXT_-RpQh5SA" xpdExt:DisplayName="" Name="" From="_Mxc_ACmrEeuXT_-RpQh5SA" To="_PKiwwCnAEeuXT_-RpQh5SA">
+          <xpdl2:ConnectorGraphicsInfos>
+            <xpdl2:ConnectorGraphicsInfo BorderColor="0,0,128" ToolId="XPD.ConnectionInfo"/>
+          </xpdl2:ConnectorGraphicsInfos>
+        </xpdl2:Transition>
+        <xpdl2:Transition Id="_AqW2ACqKEeuFK4vUERYa3A" xpdExt:DisplayName="" Name="" From="_nsuTwCqJEeuFK4vUERYa3A" To="_urZOkymjEeuXT_-RpQh5SA">
+          <xpdl2:ConnectorGraphicsInfos>
+            <xpdl2:ConnectorGraphicsInfo BorderColor="0,0,128" ToolId="XPD.ConnectionInfo"/>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.LabelAnchorPosition">
+              <xpdl2:Coordinates XCoordinate="50.0" YCoordinate="0.0"/>
+              <xpdl2:Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </xpdl2:ConnectorGraphicsInfo>
+          </xpdl2:ConnectorGraphicsInfos>
+        </xpdl2:Transition>
+        <xpdl2:Transition Id="_SaIfoC2ZEeuGVJJJMRLYnw" xpdExt:DisplayName="" Name="" From="_RsWMkC2ZEeuGVJJJMRLYnw" To="_Mxc_ACmrEeuXT_-RpQh5SA">
+          <xpdl2:ConnectorGraphicsInfos>
+            <xpdl2:ConnectorGraphicsInfo BorderColor="0,0,128" ToolId="XPD.ConnectionInfo"/>
+            <xpdl2:ConnectorGraphicsInfo ToolId="XPD.LabelAnchorPosition">
+              <xpdl2:Coordinates XCoordinate="50.0" YCoordinate="0.0"/>
+              <xpdl2:Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </xpdl2:ConnectorGraphicsInfo>
+          </xpdl2:ConnectorGraphicsInfos>
+        </xpdl2:Transition>
+      </xpdl2:Transitions>
+      <xpdl2:ExtendedAttributes>
+        <xpdl2:ExtendedAttribute Name="Destination" Value="BPM"/>
+      </xpdl2:ExtendedAttributes>
+    </xpdl2:WorkflowProcess>
+  </xpdl2:WorkflowProcesses>
+  <xpdl2:ExtendedAttributes>
+    <xpdl2:ExtendedAttribute Name="CreatedBy" Value="TIBCO Business Studio"/>
+    <xpdl2:ExtendedAttribute Name="FormatVersion" Value="20"/>
+    <xpdl2:ExtendedAttribute Name="OriginalFormatVersion" Value="20"/>
+  </xpdl2:ExtendedAttributes>
+</xpdl2:Package>
